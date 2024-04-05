@@ -8,3 +8,6 @@ Optimized RAG: Build RAG pipelines with SOTA efficient components for greater co
 Optimized for Intel Hardware: Leverage Intel extensions for PyTorch (IPEX), 🤗 Optimum Intel and 🤗 Optimum-Habana for running as optimal as possible on Intel® Xeon® Processors and Intel® Gaudi® AI accelerators.
 Customizable: fastRAG is built using Haystack and HuggingFace. All of fastRAG's components are 100% Haystack compatible.
 
+![RAG_vs_Fine_Tuning](https://github.com/allenwsh82/llm_with_fastRAG/assets/44453417/dead4bd6-f317-454b-a074-a15e3ac8b267)
+
+
