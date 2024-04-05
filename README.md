@@ -10,4 +10,7 @@ Customizable: fastRAG is built using Haystack and HuggingFace. All of fastRAG's 
 
 ![RAG_vs_Fine_Tuning](https://github.com/allenwsh82/llm_with_fastRAG/assets/44453417/dead4bd6-f317-454b-a074-a15e3ac8b267)
 
+![tco](https://github.com/allenwsh82/llm_with_fastRAG/assets/44453417/b67059ee-f45d-4c5f-bad2-99dab9a33328)
+
+
 
