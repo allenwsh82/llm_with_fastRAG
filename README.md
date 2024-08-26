@@ -17,6 +17,7 @@ What is the differences between Retrieval Augmented Generation vs Pre-Training v
 
 
 How to run the Question-Answer with fastRAG Demo:
-1) Clone the project into your local drive: 
+1) Clone the project: git clone https://github.com/allenwsh82/llm_with_fastRAG.git
+2) 
 
 <img width="960" alt="QnA_fastRAG_1" src="https://github.com/user-attachments/assets/83cbdfbf-b946-4b37-ad37-b8250789f538">
