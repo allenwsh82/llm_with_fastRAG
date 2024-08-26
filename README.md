@@ -17,7 +17,8 @@ What is the differences between Retrieval Augmented Generation vs Pre-Training v
 
 End to End fastRAG Pipeline Block Diagram :
 
-<img width="800" alt="QnA_fastRAG_3png" src="https://github.com/user-attachments/assets/7957cb01-fb21-4432-a79c-73f78c862cf5">
+<img width="850" alt="QnA_fastRAG_3png" src="https://github.com/user-attachments/assets/7957cb01-fb21-4432-a79c-73f78c862cf5">
+
 
 How to run the Question-Answer with fastRAG Demo:
 
