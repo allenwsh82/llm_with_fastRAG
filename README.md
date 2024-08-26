@@ -35,10 +35,15 @@ How to run the Question-Answer with fastRAG Demo:
    <img width="1000" alt="QnA_fastRAG_4" src="https://github.com/user-attachments/assets/b9b11e8a-5d65-4f47-9212-e05f0fa18441">
    
 7) Then execute the program by running the following command:
-   python Generative_QA_Haystack_PromptNode_CSV_database_llama2_Demo.py
-8) 
 
+   python Generative_QA_Haystack_PromptNode_CSV_database_llama2_Demo.py
+   
 
 User Interface Question-Answer with fastRAG with Gradio: 
 
 <img width="960" alt="QnA_fastRAG_1" src="https://github.com/user-attachments/assets/83cbdfbf-b946-4b37-ad37-b8250789f538">
+
+Comparison of RAG vs Non-Rag Generated Answers:
+
+<img width="900" alt="QnA_fastRAG_5" src="https://github.com/user-attachments/assets/2d11397d-8699-4fa9-ab66-4995700ab0ae">
+
