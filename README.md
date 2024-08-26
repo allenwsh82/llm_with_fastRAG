@@ -23,6 +23,8 @@ How to run the Question-Answer with fastRAG Demo:
 4) Setup the environment with all the dependencies: pip insstall -r requirements.txt
 5) You can create your own .csv file or download a .csv format file from this link:
    https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/small_generator_dataset.csv.zip
-6) 
+6) Then execute the program by running the following command:
+   python Generative_QA_Haystack_PromptNode_CSV_database_llama2_Demo.py
+7) 
 
 <img width="960" alt="QnA_fastRAG_1" src="https://github.com/user-attachments/assets/83cbdfbf-b946-4b37-ad37-b8250789f538">
