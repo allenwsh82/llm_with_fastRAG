@@ -15,8 +15,12 @@ What is the differences between Retrieval Augmented Generation vs Pre-Training v
 ![tco](https://github.com/allenwsh82/llm_with_fastRAG/assets/44453417/b67059ee-f45d-4c5f-bad2-99dab9a33328)
 
 
+End to End fastRAG Pipeline Block Diagram :
+
+<img width="659" alt="QnA_fastRAG_3png" src="https://github.com/user-attachments/assets/cdad3b89-d6f6-4a0e-a7c8-e5e2bc9f2e8e">
 
 How to run the Question-Answer with fastRAG Demo:
+
 1) Clone the project: git clone https://github.com/allenwsh82/llm_with_fastRAG.git
 2) Create a new environment for this project: python -m venv rag_env
 3) Activate the environment: source rag_evn/bin/activate
