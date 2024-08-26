@@ -41,7 +41,7 @@ How to run the Question-Answer with fastRAG Demo:
 
 User Interface Question-Answer with fastRAG with Gradio: 
 
-<img width="960" alt="QnA_fastRAG_1" src="https://github.com/user-attachments/assets/83cbdfbf-b946-4b37-ad37-b8250789f538">
+<img width="1100" alt="QnA_fastRAG_1" src="https://github.com/user-attachments/assets/83cbdfbf-b946-4b37-ad37-b8250789f538">
 
 Comparison of RAG vs Non-Rag Generated Answers:
 
