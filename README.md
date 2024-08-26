@@ -32,4 +32,7 @@ How to run the Question-Answer with fastRAG Demo:
    python Generative_QA_Haystack_PromptNode_CSV_database_llama2_Demo.py
 7) 
 
+
+User Interface Question-Answer with fastRAG with Gradio: 
+
 <img width="960" alt="QnA_fastRAG_1" src="https://github.com/user-attachments/assets/83cbdfbf-b946-4b37-ad37-b8250789f538">
