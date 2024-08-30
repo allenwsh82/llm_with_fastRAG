@@ -25,7 +25,7 @@ How to run the Question-Answer with fastRAG Demo:
 1) Clone the project: git clone https://github.com/allenwsh82/llm_with_fastRAG.git
 2) Create a new environment for this project: python -m venv rag_env
 3) Activate the environment: source rag_evn/bin/activate
-4) Setup the environment with all the dependencies: pip insstall -r requirements.txt
+4) Setup the environment with all the dependencies: pip install -r requirements.txt
 5) You can create your own .csv file or download a .csv format file from this link:
    
    https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/small_generator_dataset.csv.zip
