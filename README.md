@@ -1,4 +1,4 @@
-# llm_with_fastRAG
+# Building LLM Inference with fastRAG 
 
 fastRAG is a research framework for efficient and optimized retrieval augmented generative pipelines, incorporating state-of-the-art LLMs and Information Retrieval. fastRAG is designed to empower researchers and developers with a comprehensive tool-set for advancing retrieval augmented generation.
 
