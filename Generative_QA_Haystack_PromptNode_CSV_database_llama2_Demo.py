@@ -43,29 +43,46 @@ print()
 # Create dataframe with columns "title" and "text"
 print("Using Pandas function to read the csv file in progress.....")
 print()
+
+# Demonstrate ETL Process
+# Extract
+
 df = pd.read_csv(f"{doc_dir}/small_generator_dataset.csv", sep=",")
+
+# Transform
 # Minimal cleaning
+# Replaces all NaN values with an empty string.
+# This is minimal data cleaning — it ensures that your text data doesn’t break when creating documents.
+
 df.fillna(value="", inplace=True)
 print("Do a print out the first 5 rows of the content......")
 print()
 print(df.head(n=5))
 print()
 
-from haystack import Document
-
+# Load (Into Haystack Document Objects)
 # Use data to initialize Document objects
+# Converts each row in your dataset into a Haystack Document object.
+# content holds your text data.
+# meta stores metadata (like the title).
+
+from haystack import Document
 titles = list(df["title"].values)
 texts = list(df["text"].values)
 documents = []
 for title, text in zip(titles, texts):
     documents.append(Document(content=text, meta={"name": title or ""}))
 
-from haystack.document_stores import FAISSDocumentStore
 
+#Initialize FAISS Document Store
+# Creates a FAISS (Facebook AI Similarity Search) document store — an embedding-based vector index.
+#It will store and search your Document objects efficiently by vector similarity.
+
+from haystack.document_stores import FAISSDocumentStore
 print()
 print("Creating faiss_document_store.db.....")
-
 document_store = FAISSDocumentStore(faiss_index_factory_str="Flat", return_embedding=True)
+
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
