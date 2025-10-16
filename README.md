@@ -22,10 +22,26 @@ End to End fastRAG Pipeline Block Diagram :
 
 How to run the Question-Answer with fastRAG Demo:
 
-1) Clone the project: git clone https://github.com/allenwsh82/llm_with_fastRAG.git
-2) Create a new environment for this project: python -m venv rag_env
-3) Activate the environment: source rag_evn/bin/activate
-4) Setup the environment with all the dependencies: pip install -r requirements.txt
+1) Clone the project:
+```
+   git clone https://github.com/allenwsh82/llm_with_fastRAG.git
+```
+
+2) Create a new environment for this project: 
+```
+   python -m venv rag_env
+```
+
+3) Activate the environment: 
+```
+   source rag_evn/bin/activate
+```
+
+4) Setup the environment with all the dependencies: 
+```
+   pip install -r requirements.txt
+```
+
 5) You can create your own .csv file or download a .csv format file from this link:
    
    https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/small_generator_dataset.csv.zip
@@ -34,10 +50,10 @@ How to run the Question-Answer with fastRAG Demo:
    
    <img width="1000" alt="QnA_fastRAG_4" src="https://github.com/user-attachments/assets/b9b11e8a-5d65-4f47-9212-e05f0fa18441">
    
-7) Then execute the program by running the following command:
-
-   python Generative_QA_Haystack_PromptNode_CSV_database_llama2_Demo.py
-   
+6) Then execute the program by running the following command:
+```
+   python Generative_QA_Haystack_PromptNode_CSV_database_llama2_Demo.py   
+```
 
 User Interface Question-Answer with fastRAG with Gradio: 
 
