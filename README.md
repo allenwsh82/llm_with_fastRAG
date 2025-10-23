@@ -64,6 +64,10 @@ Each row is converted into a Haystack Document object:
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+- content: Holds the main text.
+- meta: Stores metadata like the title.
+
+
 **🧠 Initialize FAISS Document Store**
 
 We set up a FAISS-based vector index to store and search documents efficiently
