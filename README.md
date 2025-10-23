@@ -56,6 +56,7 @@ All NaN values are replaced with empty strings to prevent issues when converting
 Each row is converted into a Haystack Document object:
 
 ---------------------------------------------------------------------------------------------------------------------------------
+
 **from haystack import Document**
 
 **titles = list(df["title"].values)**
@@ -88,8 +89,8 @@ This enables fast similarity search over embedded documents.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-model = AutoModelForCausalLM.from_pretrained(model_path, use_auth_token=hf_token)
-tokenizer = AutoTokenizer.from_pretrained(model_path, use_auth_token=hf_token)
+**model = AutoModelForCausalLM.from_pretrained(model_path, use_auth_token=hf_token)**
+**tokenizer = AutoTokenizer.from_pretrained(model_path, use_auth_token=hf_token)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -101,8 +102,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_path, use_auth_token=hf_token)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-retriever = EmbeddingRetriever(...)
-reranker = SentenceTransformersRanker(...)
+**retriever = EmbeddingRetriever(...)**
+**reranker = SentenceTransformersRanker(...)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -114,7 +115,7 @@ reranker = SentenceTransformersRanker(...)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-lfqa_prompt = PromptTemplate(...)
+**lfqa_prompt = PromptTemplate(...)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -126,8 +127,8 @@ lfqa_prompt = PromptTemplate(...)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-local_model = PromptModel(...)
-prompt = PromptNode(...)
+**local_model = PromptModel(...)**
+**prompt = PromptNode(...)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -138,9 +139,9 @@ prompt = PromptNode(...)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-document_store.delete_documents()
-document_store.write_documents(documents)
-document_store.update_embeddings(retriever=retriever)
+**document_store.delete_documents()**
+**document_store.write_documents(documents)**
+**document_store.update_embeddings(retriever=retriever)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -152,8 +153,8 @@ document_store.update_embeddings(retriever=retriever)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-p = Pipeline()
-p.add_node(...)
+**p = Pipeline()**
+**p.add_node(...)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -164,8 +165,8 @@ p.add_node(...)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-a = p.run(query="who got the first nobel prize in physics", debug=True)
-print(a['answers'][0].answer)
+**a = p.run(query="who got the first nobel prize in physics", debug=True)**
+**print(a['answers'][0].answer)**
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
