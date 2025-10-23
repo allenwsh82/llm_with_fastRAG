@@ -81,8 +81,99 @@ We set up a FAISS-based vector index to store and search documents efficiently
 
 This enables fast similarity search over embedded documents.
 
+**This script demonstrates a complete retrieval-augmented generation (RAG) pipeline using Haystack, Hugging Face Transformers, and FAISS—integrating document indexing, semantic search, reranking, and prompt-based generation with a local LLaMA 2 model. Here's a structured walkthrough of what it's doing:**
 
-How to run the Question-Answer with fastRAG Demo:
+
+**🧠 Model Setup**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+model = AutoModelForCausalLM.from_pretrained(model_path, use_auth_token=hf_token)
+tokenizer = AutoTokenizer.from_pretrained(model_path, use_auth_token=hf_token)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Loads the LLaMA 2 7B Chat model locally using Hugging Face Transformers.
+- Uses a Hugging Face token for authentication.
+
+
+**🔍 Retriever + Reranker + PromptNode**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+retriever = EmbeddingRetriever(...)
+reranker = SentenceTransformersRanker(...)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Retriever: Uses sentence-transformers for dense vector search.
+- Reranker: Refines top results using a cross-encoder for relevance scoring
+
+
+**📝 Prompt Template**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+lfqa_prompt = PromptTemplate(...)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Defines a long-form QA prompt with a 50-word constraint.
+- Uses {join(documents)} to inject retrieved context.
+
+
+**PromptNode Configuration**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+local_model = PromptModel(...)
+prompt = PromptNode(...)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Wraps the LLaMA model with HFLocalInvocationLayer to support non-standard Hugging Face models.
+- Configures generation parameters like max_length, torch_dtype, and streaming
+
+**📚 Document Store Operations**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+document_store.delete_documents()
+document_store.write_documents(documents)
+document_store.update_embeddings(retriever=retriever)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Clears existing documents.
+- Writes new documents from your earlier ETL step.
+- Updates vector embeddings for semantic search.
+
+**🔗 Pipeline Assembly**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+p = Pipeline()
+p.add_node(...)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Connects retriever → reranker → prompt node.
+- Executes the pipeline with a user query.
+
+**🧪 Sample Query Execution**
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+a = p.run(query="who got the first nobel prize in physics", debug=True)
+print(a['answers'][0].answer)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+- Runs the full RAG pipeline.
+- Retrieves, reranks, and generates an answer using your custom prompt.
+
+
+**How to run the Question-Answer with fastRAG Demo:**
 
 1) Clone the project:
 ```
