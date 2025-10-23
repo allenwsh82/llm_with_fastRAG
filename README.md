@@ -20,6 +20,47 @@ End to End fastRAG Pipeline Block Diagram :
 <img width="900" alt="QnA_fastRAG_3png" src="https://github.com/user-attachments/assets/7957cb01-fb21-4432-a79c-73f78c862cf5">
 
 
+🧪 ETL Demonstration Using Pandas and Haystac
+
+This demo illustrates a simple ETL pipeline using Pandas for data handling and Haystack for document indexing with FAISS.
+
+📥 Extract
+We begin by reading a CSV file using Pandas
+---------------------------------------------------------------------------------------------------------------------------------
+df = pd.read_csv(f"{doc_dir}/small_generator_dataset.csv", sep=",")
+---------------------------------------------------------------------------------------------------------------------------------
+
+This loads the dataset into a DataFrame for further processing.
+
+🔧 Transform
+We perform minimal data cleaning to ensure robustness during document creation:
+---------------------------------------------------------------------------------------------------------------------------------
+df.fillna(value="", inplace=True)
+print(df.head(n=5))
+---------------------------------------------------------------------------------------------------------------------------------
+
+All NaN values are replaced with empty strings to prevent issues when converting rows into text-based documents.
+
+📦 Load
+Each row is converted into a Haystack Document object:
+---------------------------------------------------------------------------------------------------------------------------------
+from haystack import Document
+
+titles = list(df["title"].values)
+texts = list(df["text"].values)
+documents = [Document(content=text, meta={"name": title or ""}) for title, text in zip(titles, texts)]
+---------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Initialize FAISS Document Store
+We set up a FAISS-based vector index to store and search documents efficiently
+---------------------------------------------------------------------------------------------------------------------------------
+from haystack.document_stores import FAISSDocumentStore
+
+document_store = FAISSDocumentStore(faiss_index_factory_str="Flat", return_embedding=True)
+---------------------------------------------------------------------------------------------------------------------------------
+This enables fast similarity search over embedded documents.
+
+
 How to run the Question-Answer with fastRAG Demo:
 
 1) Clone the project:
