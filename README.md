@@ -20,6 +20,7 @@ What is the differences between Retrieval Augmented Generation vs Pre-Training v
 <img width="900" alt="QnA_fastRAG_3png" src="https://github.com/user-attachments/assets/7957cb01-fb21-4432-a79c-73f78c862cf5">
 
 
+
 **🧪 ETL Demonstration Using Pandas and Haystack**
 
 This demo illustrates a simple ETL pipeline using Pandas for data handling and Haystack for document indexing with FAISS.
